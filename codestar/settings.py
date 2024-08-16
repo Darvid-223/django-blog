@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-h7pi26%mu=u11%wo7s3g-ravyve6(jqkz&l(m7e6-%jz8_fr)x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-darvid223-djangoblog-giqwzrgt0je.ws-eu115.gitpod.io']
 
@@ -85,6 +85,7 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
