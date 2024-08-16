@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-h7pi26%mu=u11%wo7s3g-ravyve6(jqkz&l(m7e6-%jz8_fr)x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-darvid223-djangoblog-giqwzrgt0je.ws-eu115.gitpod.io']
+ALLOWED_HOSTS = ['8000-darvid223-djangoblog-giqwzrgt0je.ws-eu115.gitpod.io', '8000-darvid223-djangoblog-bik38ujqxh5.ws-eu115.gitpod.io']
 
 
 # Application definition
@@ -91,6 +91,12 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com",
+    "https://8000-darvid223-djangoblog-bik38ujqxh5.ws-eu115.gitpod.io"
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -132,3 +138,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
